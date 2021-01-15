@@ -11,11 +11,16 @@ public class LoadDatabase {
 
     private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
 
-    @Bean//Spring will run ALL CommandLineRunner beans when the apllication is running.
+    /**
+     * Spring will run ALL CommandLineRunner beans when the application is running.
+     * @param repository
+     * @return
+     */
+    @Bean
     CommandLineRunner initDatabase(EmployeeRepository repository){
         return args -> {
             log.info("Preloading "+repository.save(new Employee("Tim Scheifler","CEO")));
-            log.info("Preloading"+repository.save(new Employee("Lutz Weigold","Burglar")));
+            log.info("Preloading"+repository.save(new Employee("Lutz Weigold","Trainee")));
         };
     }
 }
