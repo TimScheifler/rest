@@ -1,5 +1,7 @@
 package com.example.restexample;
 
+import com.example.restexample.employee.Employee;
+import com.example.restexample.employee.EmployeeRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
